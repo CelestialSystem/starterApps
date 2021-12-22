@@ -13,6 +13,7 @@ Ext.define('{appName}.view.main.MainViewController', {
 
     // menuItem can change either because the user selected an item in the NavView, or
     // because the record is named in the URL routing information.
+    // LET THERE BE FIRE!!!
     vm.bind("{menuItem}", me.setCenterViewXtype, me);
   },
 
