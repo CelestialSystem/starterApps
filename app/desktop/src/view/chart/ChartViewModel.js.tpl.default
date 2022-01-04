@@ -1,4 +1,4 @@
-Ext.define('{appName}.view.login.ChartViewModel', {
+Ext.define('{appName}.view.chart.ChartViewModel', {
 	extend: 'Ext.app.ViewModel',
 	alias: 'viewmodel.chartviewmodel',
 	data: {
