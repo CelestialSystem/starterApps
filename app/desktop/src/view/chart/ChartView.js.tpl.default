@@ -3,18 +3,16 @@ Ext.define('{appName}.view.chart.ChartView', {
     xtype: 'chartview',
     cls: 'chartview',
     controller: 'chartviewcontroller',
-    viewModel: {
-        type: 'chartviewmodel'
-    },
+    viewModel:'chartviewmodel',
     requires: [
         'Ext.chart.*'
     ],
     layout: {
         type: 'vbox',
-        align: 'center',
+        align: 'stretch',
         pack: 'center'
     },
-
+    bodyPadding: 50,
     items: [{
             xtype: 'cartesian',
             iconCls: 'x-fa fa-globe',
@@ -57,11 +55,6 @@ Ext.define('{appName}.view.chart.ChartView', {
                     },
                     grid: true,
                     minimum: 0
-                    //label: {
-                    //  rotate: {
-                    //    degrees: -90
-                    //}
-                    //}
                 }, {
                     type: 'category3d',
                     position: 'left',
@@ -85,8 +78,8 @@ Ext.define('{appName}.view.chart.ChartView', {
                 type: 'text',
                 text: 'Chart by month',
                 font: '15px Helvetica',
-                x: 500,
-                y: 50
+                x: 400,
+                y: 12
             }
         }
     ]
