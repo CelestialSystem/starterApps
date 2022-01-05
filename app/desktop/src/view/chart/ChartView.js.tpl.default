@@ -9,7 +9,11 @@ Ext.define('{appName}.view.chart.ChartView', {
     requires: [
         'Ext.chart.*'
     ],
-
+    layout: {
+        type: 'vbox',
+        align: 'center',
+        pack: 'center'
+    },
     items: [{
         xtype: 'cartesian',
         title: 'Chart',
