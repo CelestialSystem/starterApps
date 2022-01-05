@@ -9,14 +9,14 @@ Ext.define('{appName}.view.chart.ChartView', {
     ],
     layout: {
         type: 'vbox',
-        align: 'stretch',
+        align: 'center',
         pack: 'center'
     },
-    bodyPadding: 50,
     items: [{
             xtype: 'cartesian',
             iconCls: 'x-fa fa-globe',
             height: 400,
+            width: '80%',
             innerPadding: '0 130 0 10',
             flipXY: true,
             store: {
@@ -78,7 +78,7 @@ Ext.define('{appName}.view.chart.ChartView', {
                 type: 'text',
                 text: 'Chart by month',
                 font: '15px Helvetica',
-                x: 400,
+                x: 300,
                 y: 12
             }
         }
