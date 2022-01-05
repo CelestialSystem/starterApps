@@ -3,84 +3,95 @@ Ext.define('{appName}.view.chart.ChartView', {
     xtype: 'chartview',
     cls: 'chartview',
     controller: 'chartviewcontroller',
-    viewModel: 'chartviewmodel',
+    viewModel: {
+        type: 'chartviewmodel'
+    },
     requires: [
         'Ext.chart.*'
     ],
-    layout: {
-        type: 'vbox',
-        align: 'center',
-        pack: 'center'
-    },
+
     items: [{
-            xtype: 'cartesian',
-            iconCls: 'x-fa fa-globe',
-            height: 400,
-            width: 500,
-            innerPadding: '0 130 0 10',
-            flipXY: true,
-            store: {
-                fields: ['name', 'count'],
-                data: [{
-                        "name": "Jan",
-                        "count": 0
-                    }, {
-                        "name": "Feb",
-                        "count": 2
-                    }, {
-                        "name": "Mar",
-                        "count": 2
-                    }, {
-                        "name": "Apr",
-                        "count": 5
-                    }, {
-                        "name": "May",
-                        "count": 5
-                    }
-                ]
-            },
+        xtype: 'cartesian',
+        title: 'Chart',
+        width: 500,
+        height: 500,
 
-            //set legend configuration
-            legend: {
-                position: 'right'
-            },
+        innerPadding: {
+            top: 50,
+            left: 10,
+            right: 10,
+            bottom: 0
+        },
 
-            //define the x and y-axis configuration.
-            axes: [{
-                    type: 'numeric3d',
-                    position: 'bottom',
-                    title: {
-                        text: 'Count',
-                        font: 16
-                    },
-                    grid: true,
-                    minimum: 0
+        store: {
+            fields: ['text', 'value', 'value2'],
+            data: [{
+                    text: 'Jan-19',
+                    value: 40,
+                    value2: 30
                 }, {
-                    type: 'category3d',
-                    position: 'left',
-                    title: {
-                        text: 'Month',
-                        font: 16
-                    }
+                    text: 'Feb-19',
+                    value: 30,
+                    value2: 10
+                }, {
+                    text: 'Mar-19',
+                    value: 30,
+                    value2: 20
+                }, {
+                    text: 'Apr-19',
+                    value: 40,
+                    value2: 10
+                }, {
+                    text: 'May-19',
+                    value: 30,
+                    value2: 20
+                }, {
+                    text: 'Jun-19',
+                    value: 20,
+                    value2: 10
                 }
-            ],
-
-            //define the actual bar series.
-            series: [{
-                    type: 'bar3d',
-                    stacked: false,
-                    xField: 'name',
-                    yField: ['count'],
-                    highlight: true
-                }
-            ],
-            sprites: {
-                type: 'text',
-                text: 'Chart by month',
-                font: '15px Helvetica',
-                x: 300,
-                y: 12
+            ]
+        },
+        axes: [{
+                type: 'category',
+                position: 'bottom',
+                fields: ['text']
+            }, {
+                type: 'numeric',
+                position: 'left',
+                fields: ['value', 'value2']
             }
-        }
-    ]
+        ],
+        series: [{
+                type: 'bar',
+                xField: 'text',
+                yField: 'value',
+                colors: [
+                    '#388E3C'
+                ],
+                label: {
+                    field: 'value',
+                    display: 'outside',
+                    orientation: 'horizontal',
+                    fontWeight: 'bold',
+                    fontSize: '40px',
+                    strokeStyle: 'none',
+                    fillStyle: 'yellow'
+                }
+            }, {
+                type: 'bar',
+                xField: 'text',
+                yField: 'value2',
+                label: {
+                    field: 'value2',
+                    display: 'outside',
+                    orientation: 'horizontal',
+                    fontWeight: 'bold',
+                    fontSize: '40px',
+                    strokeStyle: 'none',
+                    fillStyle: 'yellow'
+                }
+            }
+        ]
+    }]
 });
