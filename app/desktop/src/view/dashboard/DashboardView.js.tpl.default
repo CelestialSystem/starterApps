@@ -8,7 +8,7 @@ Ext.define('{appName}.view.chart.DashboardView', {
     },
     requires: [
         'Ext.chart.*'
-    ]
+    ],
 
     items: [{
         xtype: 'cartesian',
