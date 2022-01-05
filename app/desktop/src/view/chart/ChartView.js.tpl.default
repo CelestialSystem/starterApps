@@ -16,7 +16,7 @@ Ext.define('{appName}.view.chart.ChartView', {
             xtype: 'cartesian',
             iconCls: 'x-fa fa-globe',
             height: 400,
-            width: '80%',
+            width: 500,
             innerPadding: '0 130 0 10',
             flipXY: true,
             store: {
