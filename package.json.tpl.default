@@ -14,7 +14,7 @@
     "url": "{bugsURL}"
   },
   "homepage": "{homepageURL}",
-<tpl if="universal == true">
+<tpl if="toolkit == 'universal'">
   "scripts": {
     "start": "npm run dev:desktop",
     "clean": "rimraf build",
@@ -26,7 +26,7 @@
     "testing:phone": "npm run clean && cross-env webpack --env treeshake=yes --env cmdopts=--testing --env cmdopts=--build=phone"
   },
 </tpl>
-<tpl if="universal == false">
+<tpl if="toolkit != 'universal'">
   "scripts": {
     "start": "npm run dev",
     "clean": "rimraf build",
@@ -36,9 +36,9 @@
   },
 </tpl>
   "dependencies": {
-  <tpl if="modern == true">
+  <tpl if="toolkit == 'modern'">
     "@sencha/ext-modern": "~7.5.0",
-    "@sencha/ext-modern-{modernTheme}": "~7.5.0",</tpl><tpl if="classic == true">
+    "@sencha/ext-modern-{modernTheme}": "~7.5.0",</tpl><tpl if="toolkit == 'classic'">
     "@sencha/ext-classic": "~7.5.0",
     "@sencha/ext-classic-{classicTheme}": "~7.5.0",</tpl>
     "@sencha/ext": "~7.5.0",
