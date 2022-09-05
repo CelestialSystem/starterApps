@@ -12,8 +12,8 @@
 <tpl if="universal == true">
   "builds": {
     "desktop": {
-      "toolkit": "<tpl if="classic == true">classic</tpl><tpl if="modern == true">modern</tpl>",
-      "theme": "<tpl if="classic == true">{classicTheme}</tpl><tpl if="modern == true">{modernTheme}</tpl>",
+      "toolkit": "classic",
+      "theme": "{classicTheme}",
       "sass": {
         "generated": {
           "var": "$\u007Bbuild.id}/sass/save.scss",
