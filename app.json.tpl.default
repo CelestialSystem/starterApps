@@ -88,10 +88,12 @@
       "exclude": ["fashion"]
     }
   ],
+
   "loader": {
     "cache": false,
     "cacheParam": "_dc"
   },
+
   "production": {
     "js": [
       {"path": "app.js", "bundle": true},
@@ -128,6 +130,7 @@
       "delay": 250
     }
   },
+
   "bootstrap": {
     "base": "$\u007bapp.dir}",
 <tpl if="universal == true">"manifest": "generatedFiles/$\u007bbuild.id}.json",</tpl>
@@ -150,26 +153,6 @@
     "network": ["*"],
     "fallback": []
   },
-<tpl if="universal == false"><tpl if="toolkit == 'classic'">
-  "slicer": {
-    "js": [
-      {
-        "path": "sass/example/custom.js",
-        "isWidgetManifest": true
-      }
-    ],
-    "output": {
-      "appCache": {
-        "enable": false
-      }
-    },
-    "cache": {
-      "enable": false
-    }
-  },
-<tpl else>
-  "slicer": null,
-</tpl></tpl>
 <tpl if="universal == true">
   "archivePath": "archive/$\u007Bbuild.id}",
 <tpl else>
