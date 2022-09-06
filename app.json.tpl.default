@@ -9,14 +9,15 @@
   "requires": [
     "font-awesome"
   ],
+
   "builds": {
     "desktop": {
       "toolkit": "classic",
       "theme": "theme-material",
       "sass": {
         "generated": {
-          "var": "${build.id}/sass/save.scss",
-          "src": "${build.id}/sass/save"
+          "var": "$\u007Bbuild.id}/sass/save.scss",
+          "src": "$\u007Bbuild.id}/sass/save"
         }
       }
     },
@@ -25,8 +26,8 @@
       "theme": "theme-material",
       "sass": {
         "generated": {
-          "var": "${build.id}/sass/save.scss",
-          "src": "${build.id}/sass/save"
+          "var": "$\u007Bbuild.id}/sass/save.scss",
+          "src": "$\u007Bbuild.id}/sass/save"
         }
       }
     }
