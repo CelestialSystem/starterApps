@@ -4,25 +4,33 @@
   "version": "1.0.0.0",
   "bypass_lp" : true,
   "framework": "{frameworkKey}",
-  "template": "{template}",
+  "template": "<tpl if="classic == true">universalclassicmodern</tpl><tpl if="modern == true">universalmodern</tpl>",
   "indexHtmlPath": "index.html",
   "requires": [
     "font-awesome"
   ],
-<tpl if="universal == true">
   "builds": {
     "desktop": {
-      "toolkit": "classic",
-      "theme": "{classicTheme}",
+      "toolkit": "<tpl if="classic == true">classic</tpl><tpl if="modern == true">modern</tpl>",
+      "theme": "<tpl if="classic == true">{classicTheme}</tpl><tpl if="modern == true">{modernTheme}</tpl>",
       "sass": {
         "generated": {
-          "var": "$\u007Bbuild.id}/sass/save.scss",
-          "src": "$\u007Bbuild.id}/sass/save"
+          "var": "${build.id}/sass/save.scss",
+          "src": "${build.id}/sass/save"
+        }
+      }
+    },
+    "phone": {
+      "toolkit": "modern",
+      "theme": "{modernTheme}",
+      "sass": {
+        "generated": {
+          "var": "${build.id}/sass/save.scss",
+          "src": "${build.id}/sass/save"
         }
       }
     }
   },
-</tpl>
   "classpath": ["<tpl if="universal == true">app/shared/</tpl>src"<tpl if="universal == true">,"app/$\u007Bbuild.id}/src"</tpl>],
   "overrides": ["<tpl if="universal == true">app/shared/</tpl>overrides"<tpl if="universal == true">,"app/$\u007Bbuild.id}/overrides"</tpl>],
 <tpl if="universal == true">
