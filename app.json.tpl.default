@@ -12,7 +12,7 @@
   "builds": {
     "desktop": {
       "toolkit": "<tpl if="classic == true">classic</tpl><tpl if="modern == true">modern</tpl>",
-      "theme": "<tpl if="classic == true">{classicTheme}</tpl><tpl if="modern == true">{modernTheme}</tpl>",
+      "theme": "theme-material",
       "sass": {
         "generated": {
           "var": "${build.id}/sass/save.scss",
@@ -22,7 +22,7 @@
     },
     "phone": {
       "toolkit": "modern",
-      "theme": "{modernTheme}",
+      "theme": "theme-material",
       "sass": {
         "generated": {
           "var": "${build.id}/sass/save.scss",
