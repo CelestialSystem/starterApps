@@ -4,14 +4,14 @@
   "version": "1.0.0.0",
   "bypass_lp" : true,
   "framework": "{frameworkKey}",
-  "template": "<tpl if="classic == true">universalclassicmodern</tpl><tpl if="modern == true">universalmodern</tpl>",
+  "template": "universalclassicmodern",
   "indexHtmlPath": "index.html",
   "requires": [
     "font-awesome"
   ],
   "builds": {
     "desktop": {
-      "toolkit": "<tpl if="classic == true">classic</tpl><tpl if="modern == true">modern</tpl>",
+      "toolkit": "classic",
       "theme": "theme-material",
       "sass": {
         "generated": {
