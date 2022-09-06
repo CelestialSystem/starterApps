@@ -20,7 +20,7 @@ Ext.define('{appName}.view.main.MainViewController', {
 
 	mainRoute:function(xtype) {
 		var navview = this.lookup('navview'),
-			menuview = navview.lookup('menuview'),
+			menuview = navview?.lookup('menuview'),
 			centerview = this.lookup('centerview'),
 			exists = Ext.ClassManager.getByAlias('widget.' + xtype),
 			node, vm;
