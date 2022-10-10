@@ -1,6 +1,14 @@
-Ext.define('ClassicApp.view.main.footer.FooterView', {
-	extend: 'Ext.panel.Panel',
-	xtype: 'footerview',
-	cls: 'footerview',
-  title: 'Ext JS version: ' + Ext.versions.extjs.version
+Ext.define('{appName}.view.main.footer.FooterView', {
+    extend: 'Ext.Toolbar',
+    xtype: 'footerview',
+    cls: 'footerview',
+    viewModel: {},
+    items: [
+        {
+            xtype: 'container',
+            cls: 'footerviewtext',
+        html: 'Ext JS version: ' + Ext.versions.extjs.version
+            //bind: { html: '{name} footer' }
+        }
+    ]
 });

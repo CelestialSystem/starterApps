@@ -2,6 +2,7 @@
   "name": "{name}",
   "namespace": "{name}",
   "version": "1.0.0.0",
+  "bypass_lp" : true,
   "framework": "{frameworkKey}",
   "template": "{template}",
   "indexHtmlPath": "index.html",
@@ -11,8 +12,8 @@
 <tpl if="universal == true">
   "builds": {
     "desktop": {
-      "toolkit": "classic",
-      "theme": "{classicTheme}",
+      "toolkit": "modern",
+      "theme": "{modernTheme}",
       "sass": {
         "generated": {
           "var": "$\u007Bbuild.id}/sass/save.scss",
@@ -27,6 +28,11 @@
 <tpl if="universal == true">
   "sass": {
     "namespace": "{name}",
+<tpl if="universal == false">
+    "generated": {
+      "var": "app/shared/sass/save.scss",
+      "src": "app/shared/sass/save"
+    },</tpl>
     "etc": [
       "sass/etc/all.scss"
     ],
@@ -67,7 +73,7 @@
   },
 </tpl>
   "fashion": {
-<tpl if="frameworkIsV65 == true">"missingParameters": "error",</tpl>
+<tpl if="frameworkIsV65 == true">   "missingParameters": "error",</tpl>
     "inliner": {"enable": false}
   },
 
@@ -87,10 +93,12 @@
       "exclude": ["fashion"]
     }
   ],
+
   "loader": {
     "cache": false,
     "cacheParam": "_dc"
   },
+
   "production": {
     "js": [
       {"path": "app.js", "bundle": true},
@@ -127,21 +135,22 @@
       "delay": 250
     }
   },
+
   "bootstrap": {
     "base": "$\u007bapp.dir}",
-<tpl if="universal == true">"manifest": "generatedFiles/$\u007bbuild.id}.json",</tpl>
+<tpl if="universal == true">    "manifest": "generatedFiles/$\u007bbuild.id}.json",</tpl>
     "microloader": "generatedFiles/bootstrap.js",
     "css": "generatedFiles/bootstrap.css"
   },
 <tpl if="universal == true">
   "cache": {
-    "enable": false,
-    "deltas": "$\u007Bbuild.id}/deltas"
+      "enable": false,
+      "deltas": "$\u007Bbuild.id}/deltas"
   },
 <tpl else>
   "cache": {
-    "enable": false,
-    "deltas": true
+      "enable": false,
+      "deltas": true
   },
 </tpl>
   "appCache": {
@@ -169,11 +178,8 @@
 <tpl else>
   "slicer": null,
 </tpl></tpl>
-<tpl if="universal == true">
-  "archivePath": "archive/$\u007Bbuild.id}",
-<tpl else>
-  "archivePath": "archive",
-</tpl>
-  "ignore": ["(^|/)CVS(/?$|/.*?$)"],
+<tpl if="universal == true">  "archivePath": "archive/$\u007Bbuild.id}",
+<tpl else>  "archivePath": "archive",
+</tpl>  "ignore": ["(^|/)CVS(/?$|/.*?$)"],
   "id": "{uniqueId}"
 }

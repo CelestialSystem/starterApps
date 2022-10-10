@@ -1,4 +1,4 @@
-Ext.define('ClassicApp.view.main.center.CenterView', {
+Ext.define('{appName}.view.main.center.CenterView', {
 	extend: 'Ext.Container',
 	xtype: 'centerview',
 	cls: 'centerview',
