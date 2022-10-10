@@ -1,4 +1,4 @@
-Ext.define('ClassicApp.view.main.MainViewController', {
+Ext.define('{appName}.view.main.MainViewController', {
   extend: 'Ext.app.ViewController',
   alias: 'controller.mainviewcontroller',
 
@@ -13,7 +13,7 @@ Ext.define('ClassicApp.view.main.MainViewController', {
 
     // menuItem can change either because the user selected an item in the NavView, or
     // because the record is named in the URL routing information.
-    vm.bind("", me.setCenterViewXtype, me);
+    vm.bind("{menuItem}", me.setCenterViewXtype, me);
   },
 
   updateCenterViewXtype: function(menuItem) {

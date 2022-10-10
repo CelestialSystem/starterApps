@@ -1,4 +1,4 @@
-Ext.define(' {appName} ClassicApp.view.personnel.PersonnelView',{
+Ext.define('{appName}.view.personnel.PersonnelView',{
 	extend: 'Ext.grid.Panel',
 	xtype: 'personnelview',
 	cls: 'personnelview',

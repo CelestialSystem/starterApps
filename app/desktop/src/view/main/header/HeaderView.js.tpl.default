@@ -1,4 +1,4 @@
-Ext.define('ClassicApp.view.main.header.HeaderView', {
+Ext.define('{appName}.view.main.header.HeaderView', {
   extend: 'Ext.toolbar.Toolbar',
   height: 50,
   xtype: 'headerview',
@@ -17,7 +17,7 @@ Ext.define('ClassicApp.view.main.header.HeaderView', {
     },
     {
       xtype: 'component',
-      bind: {html: '{heading}'},
+      bind: {html: '\u007Bheading}'},
     },
     '->',
     '->',

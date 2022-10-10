@@ -1,4 +1,4 @@
-Ext.define(' {appName} ClassicApp.view.nav.menu.MenuView', {
+Ext.define('{appName}.view.nav.menu.MenuView', {
 	extend: 'Ext.list.Tree',
 	requires: [
 		'Ext.data.TreeStore',
@@ -6,7 +6,7 @@ Ext.define(' {appName} ClassicApp.view.nav.menu.MenuView', {
 	xtype: 'menuview',
 	ui: 'nav',
 	scrollable: true,
-	bind: { micro: '{navCollapsed}' },
+	bind: { micro: '\u007BnavCollapsed}' },
 	expanderFirst: false,
 	expanderOnly: false,
 	listeners: {
