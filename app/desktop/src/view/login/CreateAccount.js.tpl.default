@@ -1,0 +1,149 @@
+Ext.define('{appName}.view.login.CreateAccount', {
+    extend: 'Ext.panel.Panel',
+    xtype: 'createaccount',
+    reference: 'create-account',
+
+    layout: {
+        type: 'vbox',
+        align: 'center',
+        pack: 'center'
+    },
+    items: [
+        {
+            xtype: 'form',
+            cls: 'form',
+            layout: 'vbox',
+            padding: '30 50',
+            width: 330,
+            ui: 'auth',
+            reference: 'formCreateAccount',
+            items: [
+                {
+                    xtype: 'image',
+                    height: 60,
+                    margin: '0 0 0 0',
+                    width: '100%',
+                    alt: 'secha-logo-image',
+                    src: 'resources/images/SenchaLogoLg.svg'
+                },
+                {
+                    xtype: 'component',
+                    margin: '9 0 0 0',
+                    html: 'Create an Account',
+                    height: 27,
+                    width: '100%',
+                    style: {
+                        'font-size': '20px',
+                        'text-align': 'center',
+                        'margin': 'auto'
+                    }
+                },
+                {
+                    xtype: 'textfield',
+                    allowBlank: false,
+                    required: true,
+                    height: 40,
+                    fieldLabel: 'Name',
+                    labelWidth:80,
+                    name: 'name',
+                    placeholder: 'Name',
+                    msgTarget: 'side',
+                    width: '100%'
+                },
+                {
+                    xtype: 'textfield',
+                    height: 40,
+                    allowBlank: false,
+                    required: true,
+                    fieldLabel: 'Organization',
+                    labelWidth:80,
+                    msgTarget: 'side',
+                    name: 'organization',
+                    placeholder: 'Organization',
+                    width: '100%'
+                },
+                {
+                    xtype: 'textfield',
+                    allowBlank: false,
+                    required: true,
+                    height: 40,
+                    msgTarget: 'side',
+                    fieldLabel: 'Email',
+                    labelWidth:80,
+                    name: 'email',
+                    placeholder: 'Email Address',
+                    width: '100%'
+
+                },
+                {
+                    xtype: 'textfield',
+                    inputType: 'password',
+                    msgTarget: 'side',
+                    allowBlank: false,
+                    required: true,
+                    height: 40,
+                    fieldLabel: 'Password',
+                    labelWidth:80,
+                    name: 'pass',
+                    placeholder: 'password',
+                    width: '100%'
+
+                },
+                {
+                    xtype: 'checkbox',
+                    width: '100%',
+                    boxLabel: 'I accept the ' +
+                        "<a style='color:var(--base-color);text-decoration: none;' href='#'>Terms</a>",
+                    bodyAlign: 'left',
+                    name: 'accept',
+                    style: {
+                        'font-size': '16px',
+                        'letter-spacing': '1.25px',
+                        'color': 'rgba(17, 17, 17, 0.54)'
+                    }
+                },
+                {
+                    xtype: 'button',
+                    text: 'SIGN UP',
+                    autoSize: true,
+                    handler: 'onRegister',
+                    height: 30,
+                    width: '100%',
+                    cls: 'button-text',
+                    style: {
+                        'text-align': 'center',
+                        'letter-spacing': '1.25px',
+                        'font-size': '14px',
+                        // 'background-color': 'rgb(33,150,243)'
+                    }
+                },
+                {
+                    xtype: 'component',
+                    margin: "4 0 0 0",
+                    padding: '5',
+                    style: {
+                        'font-size': '16px',
+                        'text-align': 'center',
+                        'color': 'black',
+                        'letter-spacing': '1.25px'
+                    },
+                    html: 'Already have an account?',
+                    width: '100%'
+                },
+                {
+                    xtype: 'button',
+                    text: 'Login',
+                    handler: 'loginClick',
+                    width: '100%',
+                    cls: 'button-text',
+                    style: {
+                        'text-align': 'center',
+                        'letter-spacing': '1.25px',
+                        'font-size': '14px',
+                        'background-color': 'rgb(125,186,66)'
+                    }
+                }
+            ]
+        }
+    ]
+});

@@ -2,31 +2,6 @@ Ext.define('{appName}.view.login.LoginViewController', {
 	extend: 'Ext.app.ViewController',
 	alias: 'controller.loginviewcontroller',
 
-	onLogin: function() {
-		var form = this.lookup('form')
-		if (form.validate()) {
-			var me = this
-			var user = me.lookup('user').getValue()
-			var pass = me.lookup('pass').getValue()
-			me.getLoginData(user, pass)
-			.then(function(response) {
-				if (response.valid == true) {
-					Ext.Msg.alert('Login Success', 'You have been logged in!')
-					localStorage.setItem("LoggedIn", true)
-					me.getView().destroy()
-					Ext.Viewport.add([{ xtype: 'mainview'}])
-				}
-				else {
-					Ext.Msg.alert('Server Login Failure', 'You have NOT been logged in!');
-				}
-			}, function(e) {
-				console.log(e);
-			})
-		} else {
-			Ext.Msg.alert('Login Failure', 'The username/password provided is invalid.');
-		}
-	},
-
 	getLoginData: function (user, pass) {
 		return new Ext.Promise(function (resolve, reject) {
 			try {
@@ -46,6 +21,127 @@ Ext.define('{appName}.view.login.LoginViewController', {
 				return reject(err);
 			}
 		});
+	},
+
+	onLogin: function() {
+        var me = this,
+            errorCmp = me.lookupReference('formLoginFailure'),
+            fields,
+            form = me.lookupReference('formLogin').getForm(),
+            errors = [],
+            data = {
+                errors: errors
+            };
+
+        if (form.isValid()) {
+            Ext.Msg.alert('Login Success', 'You have been logged in!');
+        }
+        else {
+            Ext.Msg.alert('Login Failure', 'The username/password provided is invalid.');
+            fields = form.getFields();
+
+            fields.each(function(field) {
+                var error;
+
+                if (!field.validate() && (error = field.getErrors())) {
+                    errors.push({
+                        errors: error,
+                        name: field.getFieldLabel()
+                    });
+                }
+            });
+        }
+
+        if (errorCmp) {
+            errorCmp.setData(data);
+        }
+    },
+    onRegister: function() {
+        var me = this,
+            errorCmp = me.lookup('formRegisterFailure'),
+            fields,
+            form = me.lookup('formCreateAccount').getForm(),
+            errors = [],
+            data = {
+                errors: errors
+            };
+
+        if (form.isValid()) {
+            Ext.Msg.alert('Registration Successful', 'You have successfully registered!');
+        }
+        else {
+            Ext.Msg.alert('Registration Failure', 'Please check for form errors and retry.');
+            fields = form.getFields();
+
+            fields.each(function(field) {
+                var error;
+
+                if (!field.validate() && (error = field.getErrors())) {
+                    errors.push({
+                        errors: error,
+                        name: field.getFieldLabel()
+                    });
+                }
+            });
+        }
+
+        if (errorCmp) {
+            errorCmp.setData(data);
+        }
+    },
+
+    onResetPassword: function() {
+        var me = this,
+            errorCmp = me.lookup('formResetPasswordFailure'),
+            fields,
+            form = me.lookupReference('formResetPassword').getForm(),
+            errors = [],
+            data = {
+                errors: errors
+            };
+
+        if (form.isValid()) {
+            Ext.Msg.alert('Password Reset Successful', 'You have successfully changed the password!');
+        }
+        else {
+            Ext.Msg.alert('Failure', 'Please check your email id and retry.');
+            fields = form.getFields();
+
+            fields.each(function(field) {
+                var error;
+
+                if (!field.validate() && (error = field.getErrors())) {
+                    errors.push({
+                        errors: error,
+                        name: field.getFieldLabel()
+                    });
+                }
+            });
+        }
+
+        if (errorCmp) {
+            errorCmp.setData(data);
+        }
+    },
+
+    signupClick:function(){
+		view=this.getViewModel().getView()
+		view.setActiveItem(1);
+	},
+
+	resetPassword:function(){
+		var view = this.getViewModel().getView();
+		view.setActiveItem(2);
+	},
+
+	cancleClick:function(){
+		var view = this.getViewModel().getView();
+		view.setActiveItem(0);
+	},
+    
+	loginClick:function(){
+		var view = this.getViewModel().getView();
+		view.setActiveItem(0);
 	}
 
 });
