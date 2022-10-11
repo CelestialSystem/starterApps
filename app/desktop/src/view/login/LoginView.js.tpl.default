@@ -19,9 +19,7 @@ Ext.define('{appName}.view.login.LoginView',{
                 xtype: 'image',
                 height: 60,
                 width: '100%',
-                margin: '0 0 0 0',
-                alt: 'sencha-logo-image',
-                src: 'resources/images/SenchaLogoLg.svg'
+                margin: '0 0 0 0'
             },
             {
                 xtype: 'component',
