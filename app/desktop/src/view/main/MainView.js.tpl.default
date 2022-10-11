@@ -56,18 +56,12 @@ Ext.define('{appName}.view.main.MainView', {
                         xtype: 'button',
                         text: 'Submit',
                         docked: 'right',
-                        margin: '0 13 0 0',
-                        handler: function() {
-                            Ext.Msg.confirm('Confirm', 'Are you sure?');
-                        }
+                        margin: '0 13 0 0'
                     },
                     {
                         xtype: 'button',
                         text: 'Cancel',
-                        margin: '0 0 0 13',
-                        handler: function() {
-                            Ext.Msg.confirm('Confirm', 'Are you sure?');
-                        }
+                        margin: '0 0 0 13'
                     }
                 ]
             }
