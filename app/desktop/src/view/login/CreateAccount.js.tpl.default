@@ -22,9 +22,7 @@ Ext.define('{appName}.view.login.CreateAccount', {
                     xtype: 'image',
                     height: 60,
                     margin: '0 0 0 0',
-                    width: '100%',
-                    alt: 'secha-logo-image',
-                    src: 'resources/images/SenchaLogoLg.svg'
+                    width: '100%'
                 },
                 {
                     xtype: 'component',
