@@ -10,8 +10,7 @@ Ext.define('{appName}.view.login.CreateAccountView', {
     },
     items: [
         {
-            xtype: 'form',
-            cls: 'form',
+            xtype: 'panel',
             layout: 'vbox',
             padding: '30 50',
             width: 330,

@@ -8,10 +8,9 @@ Ext.define('{appName}.view.login.LoginFormView', {
         pack: 'center'
     },
     items: [{
-        xtype: 'form',
+        xtype: 'panel',
         width: 330,
         layout: 'vbox',
-        cls: 'form',
         ui: 'auth',
         reference: 'formLogin',
         padding: '30 50',
