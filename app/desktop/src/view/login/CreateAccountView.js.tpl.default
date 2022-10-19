@@ -1,4 +1,4 @@
-Ext.define('{appName}.view.login.CreateAccount', {
+Ext.define('{appName}.view.login.CreateAccountView', {
     extend: 'Ext.panel.Panel',
     xtype: 'createaccount',
     reference: 'create-account',
