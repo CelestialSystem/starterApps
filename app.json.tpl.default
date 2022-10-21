@@ -4,7 +4,7 @@
   "version": "1.0.0.0",
   "bypass_lp" : true,
   "framework": "{frameworkKey}",
-  "template": "universalclassicmodern",
+  "template": "universalmodern",
   "indexHtmlPath": "index.html",
   "requires": [
     "font-awesome"
@@ -12,7 +12,7 @@
 
   "builds": {
     "desktop": {
-      "toolkit": "classic",
+      "toolkit": "modern",
       "theme": "{classicTheme}",
       "sass": {
         "generated": {
