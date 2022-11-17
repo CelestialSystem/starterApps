@@ -54,6 +54,9 @@
 // $font-size: 14px;
 // $color: $white_chocolate;
 
+// Base color added(previously not defined)
+$base-light-color: #bfdeff;
+
 $nav-background-color: darken($base-color,25%);
 $nav-color: white;
 
