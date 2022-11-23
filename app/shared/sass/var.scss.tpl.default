@@ -53,4 +53,4 @@
 // $font-family: $chewy;
 // $font-size: 14px;
 // $color: $white_chocolate;
-
+$base-light-color: #bfdeff;
